@@ -3,10 +3,89 @@
 
 /* font-family: 'Open Sans', sans-serif; */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap');
 
+html, body {
+	margin: 0;
+	padding: 0;
+	background-image: url('assets/04-BG.png');
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	padding: 3vh 3vh 3vh 3vh;
+	background: #acd0b6;
+}
+
+.content {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	
+	justify-content: center;
+	align-items: center;
+
+	max-width: 100%;
+}
+
+.content-item {
+	width: 70vh;
+	text-align: center;
+}
+
+.form-group {
+	width: 70vh;
+}
+
+.content-item > * {
+	margin: 13px;
+}
+
+.form-group {
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	border: 0;
+	border-radius: 4px;
+}
+
+input.form-group {
+	height: 45px;
+	padding-left: 20px;
+}
+
+textarea.form-group {
+	padding: 10px 0 0 20px;
+	resize: none;
+}
+
+.btn {
+	border: 0px;
+	border-radius: 4px;
+	box-shadow: 0px 7px 0 0 #4a8978;
+}
+
+.form-group[type="submit"] {
+	color: white;
+	background: #71a397;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+
+	margin-bottom: 50px;
+}
+
+.form-group[type="submit"]:hover {
+	margin-top: 20px;
+	box-shadow: 0 0 0 0 #4a8978;
+}
 
 h1 {
     font-family: 'Cookie', cursive;
     font-size: 71px;
     color: purple;
+    color: #e3eccd;
 }
