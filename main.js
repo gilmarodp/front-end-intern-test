@@ -1,7 +1,6 @@
-// Adicionamos nosso código dentro de uma função anônima para evitar
-// variáveis globais.
-(function() {
-  // Elemento principal do formulário
+
+(function(){
+  // Formulário
   const contactForm = document.getElementById('contact');
 
   // Campos do formulário
@@ -9,24 +8,29 @@
   const emailInput = document.getElementById('email');
   const messageInput = document.getElementById('message');
 
-  // "addEventListener" instrui o navegador a executar uma função sempre
-  // que um evento específico acontece. Nesse caso, a função abaixo será
-  // executada toda vez que o botão de envio for pressionado.
+  // Verificando se foi colocado o que foi pedido, independente
+  // do resultado, irá ser mostrado na tela.
   contactForm.addEventListener('submit', function() {
-    // A propriedade "value" contém o valor atual de um input ou textarea
-    const nameValue = nameInput.value;
+    // Pegar os valores inseridos nos elementos de entrada
+    
+    let valuesInput = {
+      'nome': nameInput.value,
+      'email': emailInput.value,
+      'mensagem': messageInput.value
+    };
 
-    // A propriedade "length" contém o tamanho (em caracteres) de uma
-    // uma string. Toda string contém essa propriedade.
-    const nameLength = nameValue.length;
+    let countErros = 0;
 
-    // "window" é um objeto global que representa a janela (ou aba) do
-    // navegador que está executando o código do seu site. O método
-    // "alert" simplesmente mostra um aviso para o usuário contendo a
-    // mensagem provida.
-    window.alert(`Botão enviar clicado! Conteúdo do campo nome: ${nameValue} (${nameLength} caracteres)`);
+    for (let key in valuesInput) {
+      if (valuesInput[key] === '') {
+        window.alert('Por favor, preencha o campo de ' + key + ' no formulário.');
+        countErros++;
+      }
+    }
 
-    // Altere e complete essa função para validar os campos do formulário
-    // de acordo com as especificações do teste. Boa sorte!
+    if (countErros === 0) {
+      window.alert('Mensagem enviada com sucesso!!!');
+    }
+
   });
 })();
